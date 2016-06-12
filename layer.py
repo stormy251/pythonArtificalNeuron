@@ -24,5 +24,5 @@ class Layer:
         # This will populate the weight N x M array with randomized values from -0.2 to 0.2
         for i in range(len(self.weight)):
             for j in range(len(self.weight[i])):
-                self.weight[i][j] = between(-0.2,0.2)
+                self.weight[i][j] = between(-1.0, 1.0)
 
