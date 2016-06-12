@@ -1,6 +1,6 @@
 from layer import Layer
-from artificial_network_utils import sigmoid
-from artificial_network_utils import deriv_sigmoid
+from storm_ANN.artificial_network_utils import deriv_sigmoid
+from storm_ANN.artificial_network_utils import sigmoid
 
 
 class ArtificialNeuralNetwork:
@@ -95,10 +95,13 @@ class ArtificialNeuralNetwork:
 
     def backward_propagate(self):
         """
-        Backprop. Propagate the error from the output layer backards to the input layer.
+        Backprop. Propagate the error from the output layer backwards to the input layer.
         :return:
         """
-        for i in range(len(self.layers) - 1, 0, -1):
+        num_layers_exclude_last = len(self.layers) - 1
+
+        for i in range(num_layers_exclude_last, 0, -1):
+
             src_layer = self.layers[i]
             dst_layer = self.layers[i - 1]
 

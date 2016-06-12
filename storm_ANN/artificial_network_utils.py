@@ -2,21 +2,21 @@ import random
 import math
 
 
-def between(min, max):
+def between(minimum, maximum):
     """
     Return a real random value between the given min and max.
-    :param min:
-    :param max:
+    :param minimum:
+    :param maximum:
     :return:
     """
-    return random.random() * (max - min) + min
+    return random.random() * (maximum - minimum) + minimum
 
 
 def make_matrix(n, m):
     """
-    Make an N rows by M columns matrix.
-    :param N:
-    :param M:
+    Make an n rows by m columns matrix.
+    :param n:
+    :param m:
     :return:
     """
     return [[0 for i in range(m)] for i in range(n)]
@@ -29,6 +29,7 @@ def sigmoid(x):
     """
     return 1.0 / (1 + math.exp(-x))
 
+
 def deriv_sigmoid(x):
     """
     This will return the value of the derivative with the input of X
@@ -36,4 +37,4 @@ def deriv_sigmoid(x):
     :return:
     """
     sgmd = sigmoid(x)
-    return (1-sgmd) * sgmd
+    return (1 - sgmd) * sgmd

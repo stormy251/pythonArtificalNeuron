@@ -1,14 +1,15 @@
-from artificial_network_utils import make_matrix
-from artificial_network_utils import between
+from storm_ANN.artificial_network_utils import between
+from storm_ANN.artificial_network_utils import make_matrix
 
 
 class Layer:
+    def __init__(self, layer_id, layer_size, prev_layer_size):
 
-    def __init__(self, id, layer_size, prev_layer_size):
+        self.layer_id = layer_id
+        self.n_neurons = layer_size
 
-        self.id = id  # this is to help keep track of what layer we are looking at.
-        self.n_neurons = layer_size  # how many neurons are in the current layer.
-        self.bias_val = 1  # this is the default value for the bias used in order to normalize the threshold
+        # this is the default value for the bias used in order to normalize the threshold
+        self.bias_val = 1
 
         self.input = [0] * self.n_neurons
 
@@ -25,4 +26,3 @@ class Layer:
         for i in range(len(self.weight)):
             for j in range(len(self.weight[i])):
                 self.weight[i][j] = between(-1.0, 1.0)
-
